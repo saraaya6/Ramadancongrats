@@ -1,4 +1,10 @@
-import { useRef, forwardRef, useImperativeHandle, useState, useEffect } from "react";
+import {
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+  useState,
+  useEffect,
+} from "react";
 import { TemplateConfig, CARD_WIDTH, CARD_HEIGHT } from "@/config/templates";
 
 interface CardPreviewProps {
@@ -42,8 +48,11 @@ const CardPreview = forwardRef<CardPreviewHandle, CardPreviewProps>(
             aspectRatio: `${CARD_WIDTH} / ${CARD_HEIGHT}`,
           }}
         >
+          // داخل ملف CardPreview.tsx // تأكدي من إضافة id="card-to-capture"
+          للعنصر الداخلي
           <div
             ref={cardRef}
+            id="card-to-capture" // مهم جداً للتحميل
             className="absolute top-0 left-0 origin-top-left"
             style={{
               width: `${CARD_WIDTH}px`,
@@ -58,21 +67,21 @@ const CardPreview = forwardRef<CardPreviewHandle, CardPreviewProps>(
               className="absolute inset-0 w-full h-full object-cover"
               draggable={false}
             />
-            {/* تم تعديل حاوية النص هنا */}
+
             <div
               className="absolute font-cairo font-bold flex items-center justify-center"
               style={{
                 top: `${template.namePosition.y}px`,
-                // الحساب الرياضي للمنتصف: نقطة البداية x ناقص نصف العرض
-                left: `${template.namePosition.x - (template.namePosition.width / 2)}px`,
+                left: "50%",
                 width: `${template.namePosition.width}px`,
+                // تحريك العنصر لنصف عرضه لليسار ليصبح في المنتصف تماماً
+                marginLeft: `-${template.namePosition.width / 2}px`,
                 height: "auto",
                 fontSize: `${template.nameStyle.fontSize}px`,
                 color: template.nameStyle.color,
-                lineHeight: "1.2",
-                direction: "rtl",
                 textAlign: "center",
-                display: "flex",
+                direction: "rtl",
+                lineHeight: "1.2",
               }}
             >
               {name}
@@ -81,7 +90,7 @@ const CardPreview = forwardRef<CardPreviewHandle, CardPreviewProps>(
         </div>
       </div>
     );
-  }
+  },
 );
 
 CardPreview.displayName = "CardPreview";

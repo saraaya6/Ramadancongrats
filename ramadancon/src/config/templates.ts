@@ -12,6 +12,7 @@ export interface TemplateConfig {
     color: string;
   };
 }
+// في ملف ramadancon/src/config/templates.ts
 
 export const TEMPLATES: TemplateConfig[] = [
   {
@@ -20,11 +21,11 @@ export const TEMPLATES: TemplateConfig[] = [
     path: "/templates/template1.png",
     namePosition: {
       x: 540,      // المنتصف أفقيًا
-      y: 1522,     // قمت بزيادة الرقم لخفض الاسم للأسفل قليلاً، عدليه حسب الحاجة
-      width: 800,   // زدت العرض ليتناسب مع الأسماء الطويلة
+      y: 1505,     // قمنا بتقليل الرقم من 1522 إلى 1480 لرفعه داخل المربع الزجاجي
+      width: 900,  
     },
     nameStyle: {
-      fontSize: 85, // كبرت الخط ليكون متناسباً مع أبعاد 1080x1920
+      fontSize: 85, 
       color: "#333333",
     },
   },
@@ -34,8 +35,8 @@ export const TEMPLATES: TemplateConfig[] = [
     path: "/templates/template2.png",
     namePosition: {
       x: 540,
-      y: 1522,     // نفس الإحداثيات للقالب الثاني
-      width: 800,
+      y: 1505,     // نفس التعديل لرفع النص للأعلى قليلاً
+      width: 900,
     },
     nameStyle: {
       fontSize: 85,

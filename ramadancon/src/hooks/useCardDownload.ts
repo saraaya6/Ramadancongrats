@@ -10,32 +10,30 @@ export const useCardDownload = () => {
     setDownloading(true);
 
     try {
-      // التأكد من جاهزية الخطوط تماماً قبل التصوير
       await document.fonts.ready;
 
+      // الحل الجذري: نستخدم خيارات windowWidth و windowHeight لتثبيت بيئة الرسم
       const canvas = await html2canvas(element, {
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
-        scale: 1, // التقاط الصورة بمقاسها الأصلي 1080x1920
+        scale: 2, // لضمان دقة عالية جداً (4K تقريباً)
         useCORS: true,
         allowTaint: false,
         backgroundColor: null,
-        // معالجة التمرير لضمان عدم وجود إزاحة
-        scrollX: 0,
-        scrollY: 0,
-        x: 0,
-        y: 0,
+        logging: false,
+        // إجبار المكتبة على اعتبار حجم النافذة مطابق لحجم الكرت
+        windowWidth: CARD_WIDTH,
+        windowHeight: CARD_HEIGHT,
         onclone: (clonedDoc) => {
-          // نبحث عن العنصر الذي يحمل الـ ref داخل النسخة المستنسخة
-          // نستخدم الـ style selector للوصول للعنصر الذي يحتوي على الـ transform
-          const clonedElement = clonedDoc.querySelector('[style*="transform"]') as HTMLElement;
+          const clonedElement = clonedDoc.getElementById("card-to-capture") as HTMLElement;
           if (clonedElement) {
+            // إلغاء أي تحويلات ناتجة عن الـ Scale في المعاينة
             clonedElement.style.transform = "none";
+            clonedElement.style.width = `${CARD_WIDTH}px`;
+            clonedElement.style.height = `${CARD_HEIGHT}px`;
+            clonedElement.style.position = "fixed";
             clonedElement.style.top = "0";
             clonedElement.style.left = "0";
-            clonedElement.style.position = "absolute";
-            clonedElement.style.margin = "0";
-            clonedElement.style.padding = "0";
           }
         },
       });
