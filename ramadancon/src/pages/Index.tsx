@@ -25,7 +25,7 @@ const Index = () => {
       <header className="px-6 py-5 flex items-center justify-between border-b border-border/50">
         <div className="flex items-center gap-4">
           <img
-            src="/images/azal-logo.png"
+            src="/images/logo.png"
             alt="Azal United"
             className="h-10 md:h-12 object-contain"
           />
@@ -35,7 +35,7 @@ const Index = () => {
             تهنئة رمضان
           </h1>
           <p className="text-xs md:text-sm text-muted-foreground">
-            أزال يونايتد
+            Bit to best
           </p>
         </div>
       </header>
@@ -94,7 +94,7 @@ const Index = () => {
       <footer className="px-6 py-5 border-t border-border/50 flex items-center justify-center gap-2 text-sm text-muted-foreground">
         <span>تم التطوير بكل ❤️ بواسطة سارة</span>
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/sara-techalamrey/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-colors"

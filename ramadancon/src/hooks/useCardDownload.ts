@@ -39,7 +39,7 @@ export const useCardDownload = () => {
       });
 
       const link = document.createElement("a");
-      link.download = `ramadan-azal-${Date.now()}.png`;
+      link.download = `ramadan-B2b-${Date.now()}.png`;
       link.href = canvas.toDataURL("image/png", 1.0);
       link.click();
     } catch (err) {
