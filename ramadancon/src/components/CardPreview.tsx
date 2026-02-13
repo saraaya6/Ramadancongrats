@@ -58,17 +58,21 @@ const CardPreview = forwardRef<CardPreviewHandle, CardPreviewProps>(
               className="absolute inset-0 w-full h-full object-cover"
               draggable={false}
             />
+            {/* تم تعديل حاوية النص هنا */}
             <div
-              className="absolute font-cairo font-bold text-center"
+              className="absolute font-cairo font-bold flex items-center justify-center"
               style={{
                 top: `${template.namePosition.y}px`,
-                left: `${template.namePosition.x}px`,
+                // الحساب الرياضي للمنتصف: نقطة البداية x ناقص نصف العرض
+                left: `${template.namePosition.x - (template.namePosition.width / 2)}px`,
                 width: `${template.namePosition.width}px`,
-                transform: "translateX(-50%)",
+                height: "auto",
                 fontSize: `${template.nameStyle.fontSize}px`,
                 color: template.nameStyle.color,
-                lineHeight: "1.6",
+                lineHeight: "1.2",
                 direction: "rtl",
+                textAlign: "center",
+                display: "flex",
               }}
             >
               {name}
