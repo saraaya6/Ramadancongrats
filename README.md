@@ -1,4 +1,27 @@
-Ramadan Congrats Card GeneratorA modern web application built to generate personalized Ramadan greeting cards. Users can enter their names, select from a variety of artistically designed templates, and download a high-quality image to share with friends and family.🚀 FeaturesReal-time Preview: See exactly how your name looks on the card as you type.Template Selection: Choose from multiple elegant Ramadan themes (e.g., Classic Black, Luxury Gold).High-Quality Downloads: Export cards as high-resolution PNG images (1080x1920) optimized for social media sharing.Responsive Design: Fully optimized for Desktop, Tablet, and Mobile devices.Modern Tech Stack: Built with React, TypeScript, and Tailwind CSS for a fast and reliable experience.🛠️ Tech StackFramework: React with ViteLanguage: TypeScriptStyling: Tailwind CSS & Shadcn UIImage Generation: html2canvasIcons: Lucide React📂 Project StructurePlaintextramadancon/
+# Ramadan Congrats Card Generator
+
+A modern web application built to generate personalized Ramadan greeting cards. Users can enter their names, select from a variety of artistically designed templates, and download a high-quality image to share with friends and family.
+
+## 🚀 Features
+
+* **Real-time Preview**: See exactly how your name looks on the card as you type.
+* **Template Selection**: Choose from multiple elegant Ramadan themes (e.g., Classic Black, Luxury Gold).
+* **High-Quality Downloads**: Export cards as high-resolution PNG images (1080x1920) optimized for social media sharing.
+* **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile devices.
+* **Modern Tech Stack**: Built with React, TypeScript, and Tailwind CSS for a fast and reliable experience.
+
+## 🛠️ Tech Stack
+
+* **Framework**: [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
+* **Language**: [TypeScript](https://www.typescriptlang.org/)
+* **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
+* **Image Generation**: [html2canvas](https://html2canvas.hertzen.com/)
+* **Icons**: [Lucide React](https://lucide.dev/)
+
+## 📂 Project Structure
+
+```text
+ramadancon/
 ├── src/
 │   ├── components/       # UI components (CardPreview, TemplateSelector)
 │   ├── config/           # Template definitions and coordinates
@@ -7,9 +30,52 @@ Ramadan Congrats Card GeneratorA modern web application built to generate person
 │   └── lib/              # Utility functions
 ├── public/               # Static assets and card templates
 └── tailwind.config.ts    # Styling configuration
-⚙️ Installation & SetupClone the repository:Bashgit clone https://github.com/saraaya6/Ramadancongrats.git
+
+```
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/saraaya6/Ramadancongrats.git
 cd Ramadancongrats/ramadancon
-Install dependencies:Bashnpm install
-Run the development server:Bashnpm run dev
-Build for production:Bashnpm run build
-🎨 Adding New TemplatesTo add a new greeting card template:Place your image in public/templates/.Update the TEMPLATES array in src/config/templates.ts with the new image path and the $(x, y)$ coordinates for the name placement.📄 LicenseThis project is created for personal and educational use during the holy month of Ramadan.Developed by Sara.
+
+```
+
+
+2. **Install dependencies**:
+```bash
+npm install
+
+```
+
+
+3. **Run the development server**:
+```bash
+npm run dev
+
+```
+
+
+4. **Build for production**:
+```bash
+npm run build
+
+```
+
+
+
+## 🎨 Adding New Templates
+
+To add a new greeting card template:
+
+1. Place your image in `public/templates/`.
+2. Update the `TEMPLATES` array in `src/config/templates.ts` with the new image path and the  coordinates for the name placement.
+
+## 📄 License
+
+This project is created for personal and educational use during the holy month of Ramadan.
+
+---
+
+*Developed by Sara.*
